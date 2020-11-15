@@ -18,10 +18,8 @@ const images = [
 
   const ulRef = document.getElementById('gallery');
 
-  function createLi (arr) {
-    for ( let i = 1; i <= arr.length; i++) {
-    const li = document.createElement("li");
-    ulRef.append(li);
-    }
-}
-    createLi(images);
+  
+  ulRef.insertAdjacentHTML('beforebegin', '<li><img></img></li>');
+  ulRef.insertAdjacentHTML('beforebegin', '<li><img></img></li>');
+  ulRef.insertAdjacentHTML('beforebegin', '<li><img></img></li>');
+  ulRef.insertAdjacentHTML('beforebegin', '<li><img></img></li>');
