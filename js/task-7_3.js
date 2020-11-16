@@ -17,9 +17,21 @@ const images = [
   ];
 
   const ulRef = document.getElementById('gallery');
-
   
-  ulRef.insertAdjacentHTML('beforebegin', '<li><img></img></li>');
-  ulRef.insertAdjacentHTML('beforebegin', '<li><img></img></li>');
-  ulRef.insertAdjacentHTML('beforebegin', '<li><img></img></li>');
-  ulRef.insertAdjacentHTML('beforebegin', '<li><img></img></li>');
+
+  function createLi (arr) {
+    for ( let i = 1; i <= arr.length; i++) {
+    const getUrlImages = arr => arr.map(({url}) => url);
+    const getAltImages = arr => arr.map(({alt}) => alt);
+    ulRef.insertAdjacentHTML('afterbegin', `<li><img class='js-images' 
+    src= '${getUrlImages(arr)[i - 1]}' 
+    alt= '${getAltImages(arr)[i - 1]}'></img></li>`);
+  }
+  ulRef.classList.add('js-list');
+  ulRef.style.border = '2px solid red';
+  const imgRef = document.querySelectorAll('img');
+  console.log(imgRef);
+
+}
+
+createLi(images);
