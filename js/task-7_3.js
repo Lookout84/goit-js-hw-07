@@ -17,7 +17,9 @@ const images = [
   ];
 
   const ulRef = document.getElementById('gallery');
-  
+  ulRef.classList.add('js-list');
+  ulRef.style.border = '2px solid red';
+  const imgRef = document.querySelectorAll('img');
 
   function createImg (arr) {
     for ( let i = 1; i <= arr.length; i++) {
@@ -27,11 +29,6 @@ const images = [
     src= '${getUrlImages(arr)[i - 1]}' 
     alt= '${getAltImages(arr)[i - 1]}'></img></li>`);
   }
-  ulRef.classList.add('js-list');
-  ulRef.style.border = '2px solid red';
-  const imgRef = document.querySelectorAll('img');
-  //console.log(imgRef);
-
 }
 
 createImg(images);
