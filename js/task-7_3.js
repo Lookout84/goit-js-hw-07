@@ -19,7 +19,7 @@ const images = [
   const ulRef = document.getElementById('gallery');
   
 
-  function createLi (arr) {
+  function createImg (arr) {
     for ( let i = 1; i <= arr.length; i++) {
     const getUrlImages = arr => arr.map(({url}) => url);
     const getAltImages = arr => arr.map(({alt}) => alt);
@@ -30,8 +30,8 @@ const images = [
   ulRef.classList.add('js-list');
   ulRef.style.border = '2px solid red';
   const imgRef = document.querySelectorAll('img');
-  console.log(imgRef);
+  //console.log(imgRef);
 
 }
 
-createLi(images);
+createImg(images);
