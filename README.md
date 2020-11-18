@@ -75,3 +75,28 @@ const ingredients = [
 #validation-input.invalid {
   border-color: #f44336;
 }
+
+7. Напиши скрипт, який реагує на зміну значення input#font-size-control (подія input) і змінює інлайн-стиль span#text оновлюючи властивість font-size. В результаті при перетягуванні повзунка змінюватиметься розмір тексту.
+
+<input id="font-size-control" type="range" />
+<br />
+<span id="text">Абракадабра!</span>
+
+8. Напиши скрипт створення і очищення колекції елементів. Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція. При натисканні на кнопку Очистити, колекція елементів очищається.
+
+Створи функцію createBoxes(amount), яка приймає 1 параметр amount - число. Функція створює стільки div, скільки вказано в amount і додає їх в div#boxes.
+
+Кожен створений div:
+
+Має випадковий rgb колір фону
+Розміри найпершого div - 30px на 30px
+Кожен наступний div після першого, повинен бути ширше і вище попереднього на   10px
+Створи функцію destroyBoxes(), яка очищає div#boxes.
+
+<div id="controls">
+  <input type="number" min="0" max="100" step="1" />
+  <button type="button" data-action="render">Створити</button>
+  <button type="button" data-action="destroy">Очистити</button>
+</div>
+
+<div id="boxes"></div>
