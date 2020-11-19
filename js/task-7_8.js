@@ -1,21 +1,14 @@
-const divControlsRef = document.getElementById('controls');
 const divBoxes = document.getElementById('boxes');
 const inputRef = document.querySelector('#controls input[type="number"]')
 const btnRender = document.querySelector('#controls button[data-action="render"]');
+const btnDestroy = document.querySelector('#controls button[data-action="destroy"]');
 
-let amount = inputRef.value;
 
 btnRender.addEventListener('click', createBoxes);
-
-
-
-function getValue(){
-    console.log(inputRef.value);
-}
+btnDestroy.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
-    //btnRender.value = Number(inputRef.value);
-    //amount = btnRender.value;
+    amount = Number(inputRef.value);
     let x = 20;
     let r = Math.floor(Math.random() * (256));
     let g = Math.floor(Math.random() * (256));
@@ -32,6 +25,8 @@ function createBoxes(amount) {
     }
 }
 
-console.dir(inputRef);
-console.dir(btnRender);
-console.log(amount)
+function destroyBoxes() {
+    while (divBoxes.lastElementChild) {
+        divBoxes.removeChild(divBoxes.lastElementChild);
+    }
+}
