@@ -9,12 +9,9 @@ const ingredients = [
 
   const ulRef = document.getElementById('ingredients');
 
-  function createLi (arr) {
-    for ( let i = 1; i <= arr.length; i++) {
-    const li = document.createElement("li");
-    li.textContent = arr[i-1];
-    ulRef.append(li);
-    }
-}
+    ingredients.map(function (item) {
+    let li = document.createElement('li');
+    ulRef.appendChild(li);
+    li.innerHTML += item
+  });
   
-createLi(ingredients);

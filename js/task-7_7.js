@@ -4,5 +4,5 @@ const spanRef = document.getElementById('text');
 inputRef.addEventListener('input', fontSizeChange)
 
 function fontSizeChange () {
-    spanRef.style.fontSize = `${Number(inputRef.value)}px`
+    spanRef.style.fontSize = `${inputRef.value}px`
 }
