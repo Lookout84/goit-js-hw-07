@@ -1,8 +1,8 @@
-const inputRef = document.getElementById('font-size-control');
-const spanRef = document.getElementById('text');
+const inputRef = document.getElementById("font-size-control");
+const spanRef = document.getElementById("text");
 
-inputRef.addEventListener('input', fontSizeChange)
+inputRef.addEventListener("input", fontSizeChange);
 
-function fontSizeChange () {
-    spanRef.style.fontSize = `${inputRef.value}px`
+function fontSizeChange() {
+  spanRef.style.fontSize = `${inputRef.value}px`;
 }
