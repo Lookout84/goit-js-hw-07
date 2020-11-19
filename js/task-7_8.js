@@ -13,6 +13,7 @@ function createBoxes(amount) {
     let r = Math.floor(Math.random() * (256));
     let g = Math.floor(Math.random() * (256));
     let b = Math.floor(Math.random() * (256));
+    let arrDiv = []; 
     for ( let i = 1; i <= amount; i++) {
     x += 10;
     const div = document.createElement('div');
@@ -21,12 +22,12 @@ function createBoxes(amount) {
     div.style.margin = '10px';
     div.style.padding = 0;
     div.style.backgroundColor = `rgb(${r / i}, ${g / i}, ${b / i})`;
-    divBoxes.append(div);
+    arrDiv.push(div);
     }
+    divBoxes.append(...arrDiv);
 }
 
 function destroyBoxes() {
-    while (divBoxes.lastElementChild) {
-        divBoxes.removeChild(divBoxes.lastElementChild);
-    }
+   divBoxes.innerHTML = '';
 }
+

@@ -9,7 +9,9 @@ function getFocus() {
 }
 
 function getValid() {
-    inputRef.value.length === Number(inputRef.getAttribute('data-length')) 
-    ? inputRef.classList.add('valid') 
-    : inputRef.classList.add('invalid');
+    if (inputRef.value.length === Number(inputRef.getAttribute('data-length'))) {
+        inputRef.classList.add('valid')
+    } else {
+        inputRef.classList.add('invalid');
+    }
 }
