@@ -67,12 +67,12 @@ getClass(
 //console.dir(img)
 
 const getImgRef = images.map(({ url, alt }) => {
- let li = document.createElement("li");
- li.insertAdjacentHTML(
-   "afterbegin",
-   `<img class = 'js-images' src = '${url}' alt = '${alt}'></img>`
- );
- return li;
+  let li = document.createElement("li");
+  li.insertAdjacentHTML(
+    "afterbegin",
+    `<img class = 'js-images' src = '${url}' alt = '${alt}'></img>`
+  );
+  return li;
 });
 
 ulRef.append(...getImgRef);
