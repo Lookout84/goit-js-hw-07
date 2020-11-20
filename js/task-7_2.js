@@ -9,7 +9,7 @@ const ingredients = [
 
 const ulRef = document.getElementById("ingredients");
 
-const arrLi = ingredients.map(function (item) {
+const arrLi = ingredients.map(item => {
   let li = document.createElement("li");
   li.textContent += item;
   return li;

@@ -38,15 +38,6 @@ function getClass(
   tag.style.width = addWidth;
 }
 
-//const ulRef = document.getElementById('gallery');
-//ulRef.classList.add('js-list');
-//ulRef.style.list = 'none';
-//ulRef.style.border = '2px solid red';
-//ulRef.style.display = 'grid';
-//ulRef.style.grid = 'auto';
-//ulRef.style.padding = '0';
-//ulRef.style.height = '100%';
-//ulRef.style.width = '50%';
 getClass(
   ulRef,
   "js-list",
@@ -59,26 +50,29 @@ getClass(
   "50%"
 );
 
-function createImg(arr) {
-  for (let i = 1; i <= arr.length; i++) {
-    const getUrlImages = (arr) => arr.map(({ url }) => url);
-    const getAltImages = (arr) => arr.map(({ alt }) => alt);
-    ulRef.insertAdjacentHTML(
-      "afterbegin",
-      `<li><img class='js-images' 
-    src= '${getUrlImages(arr)[i - 1]}' 
-    alt= '${getAltImages(arr)[i - 1]}'></img></li>`
-    );
-  }
-}
+//function createImg(arr) {
+//  for (let i = 1; i <= arr.length; i++) {
+//    const getUrlImages = (arr) => arr.map(({ url }) => url);
+//    const getAltImages = (arr) => arr.map(({ alt }) => alt);
+//    ulRef.insertAdjacentHTML(
+//      "afterbegin",
+//      `<li><img class='js-images'
+//    src= '${getUrlImages(arr)[i - 1]}'
+//    alt= '${getAltImages(arr)[i - 1]}'></img></li>`
+//    );
+//  }
+//}
+//const img = images.reduce(acc, ({url, alt}) => acc.push(...url, ...alt))
 
-createImg(images);
+//console.dir(img)
 
-const imgRef = document.querySelectorAll("img");
+const getImgRef = images.map(({ url, alt }) => {
+ let li = document.createElement("li");
+ li.insertAdjacentHTML(
+   "afterbegin",
+   `<img class = 'js-images' src = '${url}' alt = '${alt}'></img>`
+ );
+ return li;
+});
 
-//imgRef.style.height = '100%';
-//imgRef.style.width = addWidth;
-//imgRef.classList.add('js-images');
-//getClass (imgRef,'', '', '','', '', '0', '100%', '50%');
-//console.log(imgRef)
-//imgRef.style.width = '100%';
+ulRef.append(...getImgRef);
