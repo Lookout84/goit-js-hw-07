@@ -36,6 +36,55 @@ const ingredients = [
 Всі елементи галереї повинні додаватися в DOM за одну операцію вставки.
 Додай мінімальне оформлення галереї флексбоксами або грід через css-класи.
 
+// function getLiRef() {
+// let li = document.createElement("li");
+// li.insertAdjacentHTML("afterbegin", imgTag);
+
+const imgTag = images.reduce((acc, item) => {
+return [...acc, `src ='${item.url}' alt = '${item.alt}'`];
+// let li = document.createElement("li");
+// let img = document.createElement("img");
+// img.insertAdjacentHTML(
+// "afterbegin",
+// `src = '${item.url}' alt ='${item.alt}'`
+// );
+// li.insertAdjacentHTML("afterbegin", img);
+// let img = [
+// acc,
+// `<img class = 'js-images' src = '${item.url}' alt = '${item.alt}'></img>`,
+// ];
+// return li;
+}, []);
+
+// }
+// let li = document.createElement("li");
+// li.insertAdjacentHTML("afterbegin", imgTag);
+// return li;
+
+console.log(imgTag);
+
+// ulRef.insertAdjacentHTML("afterbegin", `<li>${imgTag}</li>`);
+
+// let li = document.createElement("li");
+// li.insertAdjacentHTML(
+// "afterbegin",
+// `<img class = 'js-images' ${getImgRef}></img>`
+// );
+
+// console.log(li);
+
+// function getLiRef() {
+// const img = images.reduce((acc, item) => {
+// return [
+// ...acc,
+// `<img class = 'js-images' src = '${item.url}' alt = '${item.alt}'></img>`,
+// ];
+// }, []);
+// const li = document.createElement("li");
+// li.insertAdjacentHTML("afterbegin", img);
+// return li;
+// }
+
 4. Лічильник складається зі спана і кнопок, які повинні збільшувати і зменшувати значення лічильника на 1.
 
 Створи змінну counterValue в якій буде зберігається поточне значення лічильника.
